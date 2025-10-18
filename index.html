@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>To-Do</h1>
+      <div class="add-section">
+        <input placeholder="To-Do" class="js-to-do-input input" />
+        <input type="date" class="js-date-input">
+        <button class="js-add-button add-button">Add</button>
+        <button class="js-clear-button">Clear All</button>
+        <select class="js-sort-select">
+          <option value="asc">From old to new</option>
+          <option value="desc">From new to old</option>
+        </select>
+      </div>
+      <div class="modal">
+        <div class="modal-box">
+          <p>Are you sure?</p>
+          <button class="js-modal-yes">Yes</button>
+          <button class="js-modal-cancel">Cancel</button>
+        </div>
+      </div>
+
+      <ul></ul>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

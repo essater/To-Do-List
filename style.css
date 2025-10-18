@@ -1,0 +1,244 @@
+/* === GENEL === */
+body {
+  font-family: "Inter", sans-serif;
+  background: #0d0d0d;
+  /* siyah */
+  color: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding-top: 40px;
+  margin: 0;
+}
+
+/* === ANA KUTU === */
+.container {
+  background: #1a1a1a;
+  /* kömür gri */
+  border-radius: 16px;
+  padding: 30px 40px;
+  width: 90%;
+  max-width: 650px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* === BAŞLIK === */
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #facc15;
+  /* altın sarı vurgu */
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+/* === EKLEME ALANI === */
+.add-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+/* === INPUT & SELECT === */
+input,
+select {
+  flex: 1;
+  min-width: 120px;
+  padding: 10px 12px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background: #111;
+  color: #f1f1f1;
+  font-size: 0.95rem;
+  transition: 0.2s;
+}
+
+input:focus,
+select:focus {
+  border-color: #facc15;
+  box-shadow: 0 0 8px rgba(250, 204, 21, 0.4);
+}
+
+/* === BUTONLAR === */
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+/* === ADD === */
+.js-add-button {
+  background: linear-gradient(135deg, #facc15, #fde047);
+  color: #0d0d0d;
+  font-weight: 600;
+}
+
+.js-add-button:hover {
+  background: #eab308;
+  box-shadow: 0 0 10px rgba(250, 204, 21, 0.4);
+}
+
+/* === CLEAR ALL === */
+.js-clear-button {
+  background: #f87171;
+  /* kırmızımsı vurgu */
+  color: #fff;
+}
+
+.js-clear-button:hover {
+  background: #ef4444;
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.4);
+}
+
+/* === LİSTE === */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+/* === GÖREV KARTLARI === */
+li {
+  background: #111;
+  border: 1px solid #2d2d2d;
+  border-radius: 10px;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  transition: 0.25s ease;
+}
+
+li:hover {
+  border-color: #facc15;
+  box-shadow: 0 0 10px rgba(250, 204, 21, 0.2);
+  transform: translateY(-2px);
+}
+
+/* === METİN === */
+li span {
+  flex: 1;
+  color: #f5f5f5;
+}
+
+li span:nth-of-type(2) {
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+/* === CHECKBOX === */
+li input[type="checkbox"] {
+  accent-color: #facc15;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+/* === TAMAMLANAN === */
+.completed {
+  text-decoration: line-through;
+  color: #9ca3af;
+  opacity: 0.6;
+}
+
+/* === DELETE / EDIT === */
+li button {
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+li button:nth-of-type(1) {
+  /* Delete */
+  background: #f87171;
+  color: white;
+}
+
+li button:nth-of-type(1):hover {
+  background: #ef4444;
+}
+
+li button:nth-of-type(2) {
+  /* Edit */
+  background: #facc15;
+  color: #0d0d0d;
+}
+
+li button:nth-of-type(2):hover {
+  background: #eab308;
+}
+
+/* === MODAL === */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-box {
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 25px 35px;
+  text-align: center;
+  color: #f1f1f1;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  border: 1px solid #333;
+}
+
+.modal-box button {
+  margin: 8px;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.js-modal-yes {
+  background: #facc15;
+  color: #0d0d0d;
+}
+
+.js-modal-cancel {
+  background: #f87171;
+  color: #fff;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 600px) {
+  .add-section {
+    flex-direction: column;
+  }
+
+  input,
+  select,
+  button {
+    width: 100%;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
